@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"p-apa.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="引言　　如果基本的整数和浮点数精度不能够满足需求， 那么可以使用java.math 包中的两个很有用的类：Biglnteger 和 BigDecimaL 这两个类可以处理包含任意长度数字序列的数值。 Biglnteger类实现了任意精度的整数运算， BigDecimal 实现了任意精度的浮点数运算。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://p-apa.github.io/2020/07/23/hello-world/index.html">
+<meta property="og:title" content="java大数的简单使用">
+<meta property="og:url" content="http://p-apa.github.io/2020/02/01/java%E5%A4%A7%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="宗沅のBLOG">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="引言　　如果基本的整数和浮点数精度不能够满足需求， 那么可以使用java.math 包中的两个很有用的类：Biglnteger 和 BigDecimaL 这两个类可以处理包含任意长度数字序列的数值。 Biglnteger类实现了任意精度的整数运算， BigDecimal 实现了任意精度的浮点数运算。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-07-23T09:51:57.809Z">
-<meta property="article:modified_time" content="2020-08-01T14:40:05.701Z">
+<meta property="article:published_time" content="2020-02-01T05:19:34.000Z">
+<meta property="article:modified_time" content="2020-02-06T09:49:41.229Z">
 <meta property="article:author" content="宗沅">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://p-apa.github.io/2020/07/23/hello-world/">
+<link rel="canonical" href="http://p-apa.github.io/2020/02/01/java%E5%A4%A7%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>Hello World | 宗沅のBLOG</title>
+  <title>java大数的简单使用 | 宗沅のBLOG</title>
   
 
 
@@ -175,7 +175,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://p-apa.github.io/2020/07/23/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://p-apa.github.io/2020/02/01/java%E5%A4%A7%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/P-apa/imageRepo@1.0/config_img/avatar.png">
@@ -188,7 +188,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          java大数的简单使用
         </h1>
 
         <div class="post-meta">
@@ -198,24 +198,15 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-07-23 17:51:57" itemprop="dateCreated datePublished" datetime="2020-07-23T17:51:57+08:00">2020-07-23</time>
+              <time title="创建时间：2020-02-01 13:19:34" itemprop="dateCreated datePublished" datetime="2020-02-01T13:19:34+08:00">2020-02-01</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 22:40:05" itemprop="dateModified" datetime="2020-08-01T22:40:05+08:00">2020-08-01</time>
+                <time title="修改时间：2020-02-06 17:49:41" itemprop="dateModified" datetime="2020-02-06T17:49:41+08:00">2020-02-06</time>
               </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AE%9E%E9%AA%8C/" itemprop="url" rel="index"><span itemprop="name">实验</span></a>
-                </span>
-            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -223,7 +214,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>357</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -242,21 +233,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<a id="more"></a>
+        <h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><p>　　如果基本的整数和浮点数精度不能够满足需求， 那么可以使用java.math 包中的两个很有用的类：Biglnteger 和 BigDecimaL 这两个类可以处理包含<strong>任意长度</strong>数字序列的数值。 Biglnteger类实现了<strong>任意精度</strong>的整数运算， BigDecimal 实现了任意精度的浮点数运算。 </p>
+<a id="more"></a> 
+<h4 id="1-java-math-BigInteger"><a href="#1-java-math-BigInteger" class="headerlink" title="1. java.math.BigInteger"></a>1. java.math.BigInteger</h4><p>常用操作：<br>• Biglnteger add(Biglnteger other)<br>• Biglnteger subtract(Biglnteger other)<br>• Biglnteger multipiy(Biginteger other)<br>• Biglnteger divide(Biglnteger other)<br>• Biglnteger mod(Biglnteger other)<br>返冋这个大整数和另一个大整数 other的和、差、 积、 商以及余数。<br>• int compareTo(Biglnteger other)<br>如果这个大整数与另一个大整数 other 相等， 返回 0; 如果这个大整数小于另一个大整 数 other, 返回负数； 否则， 返回正数。<br>• static Biglnteger valueOf(long x)<br>返回值等于 x 的大整数。 （静态函数valueOf的参数只能是long类型的）</p>
+<p><strong><em>例1.1</em></strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">   BigInteger a = BigInteger.valueOf(<span class="number">1234567891</span>);<span class="comment">//参数为long类型</span></span><br><span class="line">   BigInteger b = <span class="keyword">new</span> BigInteger(<span class="string">"1234567891011121314226587562147"</span>);<span class="comment">//将任意长度的字符串转换为大整数</span></span><br><span class="line">   BigInteger c = in.nextBigInteger();<span class="comment">//键盘输入</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//四则简单运算</span></span><br><span class="line">   c = a.add(b);</span><br><span class="line">   c = a.subtract(b);</span><br><span class="line">   c = a.multiply(b);</span><br><span class="line">   c = a.divide(b);</span><br><span class="line"></span><br><span class="line">   <span class="comment">//判等和比较大小</span></span><br><span class="line">   <span class="keyword">boolean</span> d = a.equals(b);</span><br><span class="line">   <span class="keyword">int</span> e = a.compareTo(b);</span><br><span class="line"></span><br><span class="line">   <span class="comment">//常用的操作</span></span><br><span class="line">   c = a.mod(b);</span><br><span class="line">   c = a.gcd(b);</span><br><span class="line">   c = a.max(b);</span><br><span class="line">   c = a.min(b);</span><br><span class="line">   c = a.pow(<span class="number">7</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">//计算长度</span></span><br><span class="line">   <span class="keyword">int</span> len = a.toString().length();</span><br></pre></td></tr></table></figure>
 
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h4 id="2-java-math-BigDecimal"><a href="#2-java-math-BigDecimal" class="headerlink" title="2.java.math.BigDecimal"></a>2.java.math.BigDecimal</h4><p>常用操作：<br>• BigDecimal add(BigDecimal other)<br>• BigDecimal subtract(BigDecimal other)<br>• BigDecimal multipiy(BigDecimal other)<br>• BigDecimal divide(BigDecimal other RoundingMode mode)<br>返回这个大实数与另一个大实数 other 的和、 差、 积、 商。<strong>要想计算商， 必须给出舍入方式 （rounding mode)</strong>。RoundingMode.HALF_UP 是在学校中学习的四舍五入方式 (BP, 数值 0 到 4 舍去， 数值 5 到 9 进位） 。它适用于常规的计算。有关其他的舍入方 式请参看 API文档。<br>• int compareTo(BigDecimal other)<br> 如果这个大实数与另一个大实数相等， 返回 0 ; 如果这个大实数小于另一个大实数， 返回负数； 否则，返回正数。<br> • static BigDecimal valueOf(long x)<br>  • static BigDecimal valueOf（double x）<br> • static BigDecimal valueOf(long x,int scale)<br> 返回值为 x 或 x / 10^scale^ 的一个大实数。</p>
+<p>　　具体的代码实现与例1.1类似，不赘述。但是在做除法的需要注意一下舍入方式。</p>
+<h4 id="3-补充"><a href="#3-补充" class="headerlink" title="3.补充"></a>3.补充</h4><p>　　关于舍入方式可以参考一下：<a href="https://blog.csdn.net/alanzyy/article/details/8465098" target="_blank" rel="noopener">DecimalFormat对数值格式化的舍入问题——RoundingMode</a><br>　　另外，关于本博文，可以参考一下：<a href="https://www.baidu.com/link?url=C2L7-qJzHXHCov4Gmjy3WErIEriL4U6fBf4-TfiYNG_fk-NtBsGMET73YySrb80hKs_zm8dRlv_2tN_wJ0ZW_paMoIbsvGHWcNfkr0IwLn_&wd=&eqid=8724d1520056db05000000035e34d4d4" target="_blank" rel="noopener">java大数详解</a> 和 <a href="https://www.baidu.com/link?url=09YhJWRVoPT9YRVLjSnMP7dkSH294wV3OEi3HBtxsXtlRWB18fYQ5afMNLSt6q9wBxajJjAH9z2VZTEa1Mv7p_&wd=&eqid=8724d1520056db05000000035e34d4d4" target="_blank" rel="noopener">java 大数详细讲解</a></p>
 
     </div>
 
@@ -292,7 +277,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://p-apa.github.io/2020/07/23/hello-world/" title="Hello World">http://p-apa.github.io/2020/07/23/hello-world/</a>
+    <a href="http://p-apa.github.io/2020/02/01/java%E5%A4%A7%E6%95%B0%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/" title="java大数的简单使用">http://p-apa.github.io/2020/02/01/java大数的简单使用/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -303,7 +288,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/java/" rel="tag"># java</a>
           </div>
 
         
@@ -312,12 +297,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/13/java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF-5-7-%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E7%AC%94%E8%AE%B0/" rel="prev" title="<<java核心技术>> 5.7 反射机制笔记">
-      <i class="fa fa-chevron-left"></i> <<java核心技术>> 5.7 反射机制笔记
+    <a href="/2020/01/31/java%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95/" rel="prev" title="java中常用的排序方法">
+      <i class="fa fa-chevron-left"></i> java中常用的排序方法
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/08/25/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8/" rel="next" title="浮点数在计算机中的存储">
-      浮点数在计算机中的存储 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/03/13/java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF-5-7-%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E7%AC%94%E8%AE%B0/" rel="next" title="<<java核心技术>> 5.7 反射机制笔记">
+      <<java核心技术>> 5.7 反射机制笔记 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -377,7 +362,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-java-math-BigInteger"><span class="nav-number">2.</span> <span class="nav-text">1. java.math.BigInteger</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-java-math-BigDecimal"><span class="nav-number">3.</span> <span class="nav-text">2.java.math.BigDecimal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-补充"><span class="nav-number">4.</span> <span class="nav-text">3.补充</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

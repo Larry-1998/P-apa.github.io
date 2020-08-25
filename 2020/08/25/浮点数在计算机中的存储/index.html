@@ -20,20 +20,24 @@
     var CONFIG = {"hostname":"p-apa.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="问题阐述学习java时对float类型产生一些疑问：①在4个字节的存储空间里float的数值范围（-3.4E+38 至3.4E+38）是怎么计算来的；②计算机是如何存储小数的。在网上查看了许多博客文章和文献后大致弄清楚了这个问题。接下来我将通过介绍浮点数在计算机中的存储机制和实例来讲解这个问题。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://p-apa.github.io/2020/07/23/hello-world/index.html">
+<meta property="og:title" content="浮点数在计算机中的存储">
+<meta property="og:url" content="http://p-apa.github.io/2020/08/25/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8/index.html">
 <meta property="og:site_name" content="宗沅のBLOG">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="问题阐述学习java时对float类型产生一些疑问：①在4个字节的存储空间里float的数值范围（-3.4E+38 至3.4E+38）是怎么计算来的；②计算机是如何存储小数的。在网上查看了许多博客文章和文献后大致弄清楚了这个问题。接下来我将通过介绍浮点数在计算机中的存储机制和实例来讲解这个问题。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-07-23T09:51:57.809Z">
-<meta property="article:modified_time" content="2020-08-01T14:40:05.701Z">
+<meta property="og:image" content="https://github.com/P-apa/imageRepo/raw/master/blog_1_Float-storage-in-computer/blog_1_picture_1.jpg">
+<meta property="og:image" content="https://github.com/P-apa/imageRepo/raw/master/blog_1_Float-storage-in-computer/blog_1_picture_2.jpg">
+<meta property="og:image" content="https://github.com/P-apa/imageRepo/raw/master/blog_1_Float-storage-in-computer/blog_1_picture_3.jpg">
+<meta property="og:image" content="https://github.com/P-apa/imageRepo/raw/master/blog_1_Float-storage-in-computer/blog_1_picture_4.jpg">
+<meta property="article:published_time" content="2020-08-25T08:00:35.397Z">
+<meta property="article:modified_time" content="2020-02-02T05:27:01.748Z">
 <meta property="article:author" content="宗沅">
-<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/P-apa/imageRepo/raw/master/blog_1_Float-storage-in-computer/blog_1_picture_1.jpg">
 
-<link rel="canonical" href="http://p-apa.github.io/2020/07/23/hello-world/">
+<link rel="canonical" href="http://p-apa.github.io/2020/08/25/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8/">
 
 
 <script id="page-configurations">
@@ -46,7 +50,7 @@
   };
 </script>
 
-  <title>Hello World | 宗沅のBLOG</title>
+  <title>浮点数在计算机中的存储 | 宗沅のBLOG</title>
   
 
 
@@ -175,7 +179,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://p-apa.github.io/2020/07/23/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://p-apa.github.io/2020/08/25/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/P-apa/imageRepo@1.0/config_img/avatar.png">
@@ -188,7 +192,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          浮点数在计算机中的存储
         </h1>
 
         <div class="post-meta">
@@ -198,24 +202,15 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-07-23 17:51:57" itemprop="dateCreated datePublished" datetime="2020-07-23T17:51:57+08:00">2020-07-23</time>
+              <time title="创建时间：2020-08-25 16:00:35" itemprop="dateCreated datePublished" datetime="2020-08-25T16:00:35+08:00">2020-08-25</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 22:40:05" itemprop="dateModified" datetime="2020-08-01T22:40:05+08:00">2020-08-01</time>
+                <time title="修改时间：2020-02-02 13:27:01" itemprop="dateModified" datetime="2020-02-02T13:27:01+08:00">2020-02-02</time>
               </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AE%9E%E9%AA%8C/" itemprop="url" rel="index"><span itemprop="name">实验</span></a>
-                </span>
-            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -223,14 +218,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>357</span>
+              <span>2.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -242,21 +237,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<a id="more"></a>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="问题阐述"><a href="#问题阐述" class="headerlink" title="问题阐述"></a>问题阐述</h1><p>学习java时对float类型产生一些疑问：①在4个字节的存储空间里float的数值范围（-3.4E+38 至3.4E+38）是怎么计算来的；②计算机是如何存储小数的。在网上查看了许多博客文章和文献后大致弄清楚了这个问题。接下来我将通过介绍浮点数在计算机中的存储机制和实例来讲解这个问题。</p>
+<a id="more"></a> 
+<h1 id="存储机制"><a href="#存储机制" class="headerlink" title="存储机制"></a>存储机制</h1><h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a><a href="https://www.runoob.com/w3cnote/decimal-decimals-are-converted-to-binary-fractions.html" target="_blank" rel="noopener">进制转换</a></h3><p>假如在写代码的时候定义了一个float变量并给它赋值，此时赋的值是十进制，而计算机是以二进制存储的，所以首先需要将十进制小数转化为二进制小数。</p>
+<p>十进制数转换为二进制数时，由于整数和小数的转换方法不同，所以先将十进制数的整数部分和小数部分分别转换后，再加以合并。</p>
+<p><strong>1.十进制整数转换为二进制整数</strong><br>十进制整数转换为二进制整数采用”除2取余，逆序排列”法。具体做法是：用2去除十进制整数，可以得到一个商和余数；再用2去除商，又会得到一个商和余数，如此进行，直到商为零时为止，然后把先得到的余数作为二进制数的低位有效位，后得到的余数作为二进制数的高位有效位，依次排列起来。</p>
+<p>例如把 (173)10 转换为二进制数。<br><img src="https://github.com/P-apa/imageRepo/raw/master/blog_1_Float-storage-in-computer/blog_1_picture_1.jpg" alt=""></p>
+<p><strong>2．十进制小数转换为二进制小数</strong><br>十进制小数转换成二进制小数采用”乘2取整，顺序排列”法。具体做法是：用2乘十进制小数，可以得到积，将积的整数部分取出，再用2乘余下的小数 部分，又得到一个积，再将积的整数部分取出，如此进行，直到积中的小数部分为零，或者达到所要求的精度为止。</p>
+<p>然后把取出的整数部分按顺序排列起来，先取的整数作为二进制小数的高位有效位，后取的整数作为低位有效位。</p>
+<p>例如把（0.8125）转换为二进制小数。<br><img src="https://github.com/P-apa/imageRepo/raw/master/blog_1_Float-storage-in-computer/blog_1_picture_2.jpg" alt=""></p>
+<p>但是，不是所有的小数都能转换有限位数的二进制小数。例如10进制0.2的2进制：</p>
+<p>0.2 x 2=0.4        0<br>0.4 x 2=0.8        0<br>0.8 x 2=1.6        1<br>0.6 x 2=1.2        1<br>0.2 x 2=0.4        0<br>0.4 x 2=0.8        0<br>0.8 x 2=1.6        1<br>0.6 x 2=1.2        1<br>……</p>
+<p>发现了吗？它是乘不尽的，是无限循环（0011）的……</p>
+<p>在计算机中，浮点数没有办法精确表示的根本原因在于计算机有限的内存无法表示无限的小数位。只能截断，<strong>截断就造精度的缺失</strong>。</p>
+<p>0.2 的二进制小数表示可以是：</p>
+<p>0.2 = 0.00110011</p>
+<p>转为十进制为：1/8 + 1/16 + 1/128 + 1/256 = 0.19921875</p>
+<p>已经很接近了，如果需要更精确的表示，只需要保留更长的有效位数。这也是双精度的double比单精度的float更精确的原因。</p>
+<p>那计算机究竟是如何保存二进制小数的呢？这个就不得不提 IEEE 754 规范了。</p>
+<h3 id="IEEE-754规范"><a href="#IEEE-754规范" class="headerlink" title="IEEE 754规范"></a>IEEE 754规范</h3><p>根据国际标准<a href="https://baike.baidu.com/item/IEEE%20754/3869922?fromtitle=IEEE754%E6%A0%87%E5%87%86&fromid=10427270" target="_blank" rel="noopener">IEEE 754</a>，任意一个二进制浮点数V可以表示成下面的形式：</p>
+<p>　　</p>
+<p>　　（1）(-1)^s^表示符号位，当s=0，V为正数；当s=1，V为负数。</p>
+<p>　　（2）M表示有效数字，大于等于1，小于2。</p>
+<p>　　（3）2^E^表示指数位。</p>
+<p>举例来说，十进制的5.0，写成二进制是101.0，相当于1.01×2^2^。那么，按照上面V的格式，可以得出s=0，M=1.01，E=2。</p>
+<p>十进制的-5.0，写成二进制是-101.0，相当于-1.01×2^2^。那么，s=1，M=1.01，E=2。</p>
+<p>IEEE 754规定，对于32位的浮点数，最高的1位是符号位s，接着的8位是指数E，剩下的23位为有效数字M。<br><img src="https://github.com/P-apa/imageRepo/raw/master/blog_1_Float-storage-in-computer/blog_1_picture_3.jpg" alt=""></p>
+<p>对于64位的浮点数，最高的1位是符号位S，接着的11位是指数E，剩下的52位为有效数字M。<br><img src="https://github.com/P-apa/imageRepo/raw/master/blog_1_Float-storage-in-computer/blog_1_picture_4.jpg" alt=""><br>IEEE 754对有效数字M和指数E，还有一些特别规定。</p>
+<p>前面说过，1≤M&lt;2，也就是说，M可以写成1.xxxxxx的形式，其中xxxxxx表示小数部分。IEEE 754规定，在计算机内部保存M时，默认这个数的第一位总是1，因此可以被舍去，只保存后面的xxxxxx部分。比如保存1.01的时候，只保存01，等到读取的时候，再把第一位的1加上去。这样做的目的，是节省1位有效数字。以32位浮点数为例，留给M只有23位，将第一位的1舍去以后，等于可以保存24位有效数字。</p>
+<p>至于指数E，情况就比较复杂。</p>
+<p>首先，E为一个无符号整数（unsigned int）。这意味着，如果E为8位，它的取值范围为0 ~ 255；如果E为11位，它的取值范围为0 ~ 2047。但是，我们知道，科学计数法中的E是可以出现负数的，所以IEEE 754规定，E的真实值必须再减去一个中间数，对于8位的E，这个中间数是127；对于11位的E，这个中间数是1023。</p>
+<p>比如，2^10^的E是10，所以保存成32位浮点数时，必须保存成10+127=137，即10001001。</p>
+<p>然后，指数E还可以再分成三种情况：</p>
+<p>（1）E不全为0或不全为1。这时，浮点数就采用上面的规则表示，即指数E的计算值减去127（或1023），得到真实值，再将有效数字M前加上第一位的1。</p>
+<p>（2）E全为0。这时，浮点数的指数E等于1-127（或者1-1023），有效数字M不再加上第一位的1，而是还原为0.xxxxxx的小数。这样做是为了表示±0，以及接近于0的很小的数字。</p>
+<p>（3）E全为1。这时，如果有效数字M全为0，表示±无穷大（正负取决于符号位s）；如果有效数字M不全为0，表示这个数不是一个数（NaN）。</p>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>上述就是浮点数大概的表示规则，详细请看<a href="https://baike.baidu.com/item/IEEE%20754/3869922?fromtitle=IEEE754%E6%A0%87%E5%87%86&fromid=10427270" target="_blank" rel="noopener">IEEE 754</a>。</p>
+<p>浮点数9.0的二进制表示如下：<br>浮点数9.0的二进制为1001.0，即1.001×2^3^。<br>那么，第一位的符号位s=0，有效数字M等于001后面再加20个0，凑满23位，指数E等于3+127=130，即10000010。<br>所以，二进制形式为：0 10000010 001 0000 0000 0000 0000 0000。</p>
+<p>float类型和double类型的取值范围计算如下：</p>
+<p>对于单精度浮点数（float）来说，有一位符号位，指数位共8位，尾数共23位。指数能够表示的指数范围为-128~127。尾数为23位。当尾数全1时再加上小数点前面的1，指数取到最大正数127（8位，正数最大127，负数最小-128）,浮点数取得正数的最大值。<br>+1.111111111111111111111*2^127^（1.后面23个1，由于尾数的范围1～2，其最高位总为1，故只需存取小数部分，所以小数为是23位1），约等于2 * 2^127^=3.4 * 10^38^。为3.4 * 10^38^负数亦然。</p>
+<p>Double的计算与此类似，double的符号位为63位，指数为62～52位，共11位。表示的范围为-1024～1023。尾数为51～0。表示的范围为+1.111111111111111111111*2^1023^（1.后面52个1）为1.7 * 10^308^。负数亦然。</p>
 
     </div>
 
@@ -292,7 +312,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://p-apa.github.io/2020/07/23/hello-world/" title="Hello World">http://p-apa.github.io/2020/07/23/hello-world/</a>
+    <a href="http://p-apa.github.io/2020/08/25/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8/" title="浮点数在计算机中的存储">http://p-apa.github.io/2020/08/25/浮点数在计算机中的存储/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -302,9 +322,6 @@
 
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"># hexo</a>
-          </div>
 
         
 
@@ -312,13 +329,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/13/java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF-5-7-%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E7%AC%94%E8%AE%B0/" rel="prev" title="<<java核心技术>> 5.7 反射机制笔记">
-      <i class="fa fa-chevron-left"></i> <<java核心技术>> 5.7 反射机制笔记
+    <a href="/2020/07/23/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/08/25/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8/" rel="next" title="浮点数在计算机中的存储">
-      浮点数在计算机中的存储 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -377,7 +391,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题阐述"><span class="nav-number">1.</span> <span class="nav-text">问题阐述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#存储机制"><span class="nav-number">2.</span> <span class="nav-text">存储机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进制转换"><span class="nav-number">2.0.1.</span> <span class="nav-text">进制转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IEEE-754规范"><span class="nav-number">2.0.2.</span> <span class="nav-text">IEEE 754规范</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实例"><span class="nav-number">3.</span> <span class="nav-text">实例</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
