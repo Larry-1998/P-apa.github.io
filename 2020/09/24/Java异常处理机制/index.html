@@ -20,19 +20,20 @@
     var CONFIG = {"hostname":"daofenglee.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="异常处理机制一、异常的概述Java程序在执行过程中所发生的异常事件可分为两类：  Error：Java虚拟机无法解决的严重问题。如栈溢出，堆溢出(OutOfMemory)。需要改代码。  Exception: 其它因编程错误或偶然的外在因素导致的一般性问题，可以使用针对性的代码进行处理。比如：空指针访问、试图读取不存在的文件、网络连接中断、数组角标越界等。   而我们说的异常通常指的是可以使用针对">
+  <meta name="description" content="Java异常处理机制一、异常的概述Java程序在执行过程中所发生的异常事件可分为两类：  Error：Java虚拟机无法解决的严重问题。如栈溢出，堆溢出(OutOfMemory)。需要改代码。  Exception: 其它因编程错误或偶然的外在因素导致的一般性问题，可以使用针对性的代码进行处理。比如：空指针访问、试图读取不存在的文件、网络连接中断、数组角标越界等。   而我们说的异常通常指的是可以">
 <meta property="og:type" content="article">
-<meta property="og:title" content="异常">
-<meta property="og:url" content="http://daofenglee.cn/2020/09/24/%E5%BC%82%E5%B8%B8/index.html">
+<meta property="og:title" content="Java异常处理机制">
+<meta property="og:url" content="http://daofenglee.cn/2020/09/24/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/index.html">
 <meta property="og:site_name" content="宗沅のBLOG">
-<meta property="og:description" content="异常处理机制一、异常的概述Java程序在执行过程中所发生的异常事件可分为两类：  Error：Java虚拟机无法解决的严重问题。如栈溢出，堆溢出(OutOfMemory)。需要改代码。  Exception: 其它因编程错误或偶然的外在因素导致的一般性问题，可以使用针对性的代码进行处理。比如：空指针访问、试图读取不存在的文件、网络连接中断、数组角标越界等。   而我们说的异常通常指的是可以使用针对">
+<meta property="og:description" content="Java异常处理机制一、异常的概述Java程序在执行过程中所发生的异常事件可分为两类：  Error：Java虚拟机无法解决的严重问题。如栈溢出，堆溢出(OutOfMemory)。需要改代码。  Exception: 其它因编程错误或偶然的外在因素导致的一般性问题，可以使用针对性的代码进行处理。比如：空指针访问、试图读取不存在的文件、网络连接中断、数组角标越界等。   而我们说的异常通常指的是可以">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-09-23T23:52:22.677Z">
-<meta property="article:modified_time" content="2020-09-23T23:58:40.818Z">
+<meta property="article:published_time" content="2020-09-24T11:45:40.099Z">
+<meta property="article:modified_time" content="2020-09-24T12:37:38.158Z">
 <meta property="article:author" content="宗沅">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://daofenglee.cn/2020/09/24/%E5%BC%82%E5%B8%B8/">
+<link rel="canonical" href="http://daofenglee.cn/2020/09/24/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/">
 
 
 <script id="page-configurations">
@@ -45,7 +46,7 @@
   };
 </script>
 
-  <title>异常 | 宗沅のBLOG</title>
+  <title>Java异常处理机制 | 宗沅のBLOG</title>
   
 
 
@@ -126,17 +127,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">2</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">4</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">3</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -174,7 +175,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://daofenglee.cn/2020/09/24/%E5%BC%82%E5%B8%B8/">
+    <link itemprop="mainEntityOfPage" href="http://daofenglee.cn/2020/09/24/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/P-apa/imageRepo@1.0/config_img/avatar.png">
@@ -187,7 +188,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          异常
+          Java异常处理机制
         </h1>
 
         <div class="post-meta">
@@ -198,7 +199,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-09-24 07:52:22 / 修改时间：07:58:40" itemprop="dateCreated datePublished" datetime="2020-09-24T07:52:22+08:00">2020-09-24</time>
+              <time title="创建时间：2020-09-24 19:45:40 / 修改时间：20:37:38" itemprop="dateCreated datePublished" datetime="2020-09-24T19:45:40+08:00">2020-09-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
+                </span>
             </span>
 
           <br>
@@ -226,7 +236,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="异常处理机制"><a href="#异常处理机制" class="headerlink" title="异常处理机制"></a>异常处理机制</h1><h3 id="一、异常的概述"><a href="#一、异常的概述" class="headerlink" title="一、异常的概述"></a>一、异常的概述</h3><p>Java程序在执行过程中所发生的异常事件可分为两类：</p>
+        <h1 id="Java异常处理机制"><a href="#Java异常处理机制" class="headerlink" title="Java异常处理机制"></a>Java异常处理机制</h1><h3 id="一、异常的概述"><a href="#一、异常的概述" class="headerlink" title="一、异常的概述"></a>一、异常的概述</h3><p>Java程序在执行过程中所发生的异常事件可分为两类：</p>
 <ol>
 <li><p><code>Error</code>：Java虚拟机无法解决的严重问题。如栈溢出，堆溢出(OutOfMemory)。需要改代码。</p>
 </li>
@@ -237,30 +247,22 @@
 <h3 id="二、Exception异常分类"><a href="#二、Exception异常分类" class="headerlink" title="二、Exception异常分类"></a>二、Exception异常分类</h3><p><strong>运行时异常</strong>：指编译器不强制处理的异常。一般是指编程的时逻辑错误。对于这类异常，可以不作处理，因为这类异常很普遍，若全处理可能会对程序的可读性和运行效率产生影响。</p>
 <p><strong>编译时异常</strong>：编译器要求必须处理的异常。即程序在运行时由于外界因素造成的一般性异常。编译器要求Java程序必须捕获或声明所有编译时异常。</p>
 <h3 id="三、异常的体系结构及常见异常"><a href="#三、异常的体系结构及常见异常" class="headerlink" title="三、异常的体系结构及常见异常"></a>三、异常的体系结构及常见异常</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Throwable</span><br><span class="line">    |-----java.lang.Error:一般不编写针对性的代码进行处理。</span><br><span class="line">    |-----java.lang.Exception:可以进行异常的处理。</span><br><span class="line">        |-----编译时异常（checked）</span><br><span class="line">            |-----IOException</span><br><span class="line">                |-----FileNotFoundException</span><br><span class="line">                |-----EOFException</span><br><span class="line">            |-----ClassNotFoundException</span><br><span class="line">        |-----运行时异常（unchecked）</span><br><span class="line">            |-----NullPointerException</span><br><span class="line">            |-----ClassCastException（类型转换异常）</span><br><span class="line">            |-----ArithmeticException</span><br><span class="line">            |-----NumberFormatException</span><br><span class="line">            |-----InputMismatchException</span><br></pre></td></tr></table></figure>
-<h3 id="四、异常处理机制"><a href="#四、异常处理机制" class="headerlink" title="四、异常处理机制"></a>四、异常处理机制</h3><p>(一)、异常处理机制：“抓抛”模型</p>
+<h3 id="四、异常处理机制"><a href="#四、异常处理机制" class="headerlink" title="四、异常处理机制"></a>四、异常处理机制</h3><p><strong>(一)、异常处理机制：“抓抛”模型</strong></p>
 <p>过程一：“抛”<br>程序在正常执行的过程中，一旦出现异常，就会在异常代码处生成一个对应异常类的对象，并将此对象抛出。一旦抛出对象以后，此后的代码(try块内的)就不再执行。其中异常对象的生成有两种方式：(1)系统自动生成，(2)手动生成异常对象并抛出(<code>throw</code>，注意这里不是<code>throws</code>)</p>
 <p>过程二：”抓”<br>可以理解为异常的处理方式：(2)try-catch-finally，(2)throws</p>
-<p>(二)、异常的第一种处理方式：try-catch-finally</p>
+<p><strong>(二)、异常的第一种处理方式：try-catch-finally</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">     <span class="comment">//可能出现异常的代码 </span></span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">1</span> 变量名<span class="number">1</span>)&#123;</span><br><span class="line">     <span class="comment">//处理异常的方式1</span></span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">2</span> 变量名<span class="number">2</span>)&#123;</span><br><span class="line">     <span class="comment">//处理异常的方式2</span></span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类型<span class="number">3</span> 变量名<span class="number">3</span>)&#123;</span><br><span class="line">     <span class="comment">//处理异常的方式2</span></span><br><span class="line">&#125;</span><br><span class="line">.....</span><br><span class="line"><span class="keyword">finally</span>&#123;</span><br><span class="line">     <span class="comment">//一定会执行的代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>说明：</strong></p>
 <ol>
-<li><p>finally是可选的；</p>
-</li>
-<li><p>使用try将可能出现异常的代码包装起来，在执行过程中，一旦出现异常，就会生成一个对应异常类的对象，根据此对象的类型去catch中进行匹配；</p>
-</li>
-<li><p>一旦try中的异常对象去配到某一个catch时，就进入catch中进行异常处理。一旦处理完成就跳出当前的try-catch结构（没有写finally的情况），继续执行其后的代码；</p>
-</li>
-<li><p>catch中的异常类型如果没有子父类关系，则谁声明在上，谁声明在下无所谓；如果满足子父类关系，则要求子类一定声明在父类的上面，否则报错；</p>
-</li>
-<li><p>常用的异常处理方式：①String getMessage()，②printStackTrace</p>
-</li>
-<li><p>在try结构中声明的变量，出了try结构后就不能再被调用；</p>
-</li>
-<li><p>使用try-catch-finally处理编译时异常，使得程序在编译时不再报错，但是运行时仍可能报错。相当于我们使用try-catch-finally将一个编译时的异常延迟到运行时出现；</p>
-</li>
-<li><p>在开发中，由于运行时异常比较常见，所以通常我们就不针对运行时异常编写try-catch-finally。针对编译时异常，一定要考虑异常的处理。</p>
-</li>
+<li>finally是可选的；</li>
+<li>使用try将可能出现异常的代码包装起来，在执行过程中，一旦出现异常，就会生成一个对应异常类的对象，根据此对象的类型去catch中进行匹配；</li>
+<li>一旦try中的异常对象去配到某一个catch时，就进入catch中进行异常处理。一旦处理完成就跳出当前的try-catch结构（没有写finally的情况），继续执行其后的代码；</li>
+<li>catch中的异常类型如果没有子父类关系，则谁声明在上，谁声明在下无所谓；如果满足子父类关系，则要求子类一定声明在父类的上面，否则报错；</li>
+<li>常用的异常处理方式：(1). <code>String getMessage()</code>,(2)<code>printStackTrace()</code></li>
+<li>在try结构中声明的变量，出了try结构后就不能再被调用；</li>
+<li>使用try-catch-finally处理编译时异常，使得程序在编译时不再报错，但是运行时仍可能报错。相当于我们使用try-catch-finally将一个编译时的异常延迟到运行时出现；</li>
+<li>在开发中，由于运行时异常比较常见，所以通常我们就不针对运行时异常编写try-catch-finally。针对编译时异常，一定要考虑异常的处理。</li>
 </ol>
 <p>(三)、异常处理的第二种方式：throws+异常类型</p>
 <ol>
@@ -269,29 +271,30 @@
 <li><p>try-catch-finally的方式真正地将异常给处理掉了；而throws的方式只是将异常抛给了方法的调用者，并没有真正将异常处理掉。</p>
 </li>
 <li><p>开发中如何选择使用try-catch-finally 还是使用throws？</p>
+</li>
+</ol>
 <ul>
-<li>如果父类中被重写的方法没有throws方式处理异常，则子类重写的方法也不能使用throws，意味着如果子类重写的方法中有异常，必须使用try-catch-finally方式处理。</li>
+<li>如果父类中被重写的方法没有throws方式处理异常，则子类重写的方法也不能使用throws，意味着如果子类重写的方法中有异常，必须使用try-catch-finally方式处理。<ul>
 <li>执行的方法a中，先后又调用了另外的几个方法，这几个方法是递进关系执行的。我们建议这几个方法使用throws的方式进行处理。而执行的方法a可以考虑使用try-catch-finally方式进行处理。</li>
 </ul>
 </li>
-</ol>
+</ul>
 <h3 id="五、异常方法重写"><a href="#五、异常方法重写" class="headerlink" title="五、异常方法重写"></a>五、异常方法重写</h3><p>方法重写的规则之一：子类重写的方法抛出的异常类型不大于父类被重写的方法抛出的异常类型</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OverrideTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">OverrideTest test = <span class="keyword">new</span> OverrideTest();</span><br><span class="line"></span><br><span class="line">test.display(<span class="keyword">new</span> SubClass());</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">(SuperClass s)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">s.method();</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SuperClass</span></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">    ;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SubClass</span> <span class="keyword">extends</span> <span class="title">SuperClass</span></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span><span class="keyword">throws</span> FileNotFoundException</span>&#123;</span><br><span class="line">    ;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OverrideTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">		OverrideTest test = <span class="keyword">new</span> OverrideTest();</span><br><span class="line">		test.display(<span class="keyword">new</span> SubClass());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">(SuperClass s)</span></span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			s.method();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SuperClass</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SubClass</span> <span class="keyword">extends</span> <span class="title">SuperClass</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span><span class="keyword">throws</span> FileNotFoundException</span>&#123;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="六、手动抛出异常：throw"><a href="#六、手动抛出异常：throw" class="headerlink" title="六、手动抛出异常：throw"></a>六、手动抛出异常：throw</h3><p>手动抛出异常是相对于系统自动抛出。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        Student s = <span class="keyword">new</span> Student();</span><br><span class="line">        s.regist(-<span class="number">1001</span>);</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">         System.out.println(e.getMessage());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">regist</span><span class="params">(<span class="keyword">int</span> id)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(id &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">this</span>.id = id;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//手动抛出异常对象</span></span><br><span class="line">            <span class="comment">//  throw new RuntimeException("您输入的数据非法！");</span></span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"您输入的数据非法！"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Student [id="</span> + id + <span class="string">"]"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Student s = <span class="keyword">new</span> Student();</span><br><span class="line">			s.regist(-<span class="number">1001</span>);</span><br><span class="line">			System.out.println(s);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			System.out.println(e.getMessage());</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">regist</span><span class="params">(<span class="keyword">int</span> id)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(id &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">this</span>.id = id;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//手动抛出异常对象</span></span><br><span class="line">            <span class="comment">//  throw new RuntimeException("您输入的数据非法！");</span></span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"您输入的数据非法！"</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"Student [id="</span> + id + <span class="string">"]"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="七、自定义异常类"><a href="#七、自定义异常类" class="headerlink" title="七、自定义异常类"></a>七、自定义异常类</h3><p>步骤：</p>
 <ol>
-<li>继承于现有的异常结构：RuntimeException 、Exception</li>
+<li>继承于现有的异常结构：<code>RuntimeException</code> 、<code>Exception</code></li>
 <li>提供全局常量：serialVersionUID</li>
 <li>提供重载的构造器</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = -<span class="number">7034897193246939L</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">MyException</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">MyException</span><span class="params">(String msg)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">super</span>(msg);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = -<span class="number">7034897193246939L</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MyException</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MyException</span><span class="params">(String msg)</span></span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(msg);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="八、总结"><a href="#八、总结" class="headerlink" title="八、总结"></a>八、总结</h3><p>这里学的异常处理并不是解决异常的根本方法，而是将可能出现的异常以一种”友好”的方式展现出来。比如用户点击了一个按钮，此时代码出现了异常，如果不针对这个异常进行处理的话可能展示出来的就是一段乱码或程序直接闪退；而进行异常处理就可用对话框的形式向用户发出错误提示信息，也可以将这个错误信息发送到后台，供开发人员进行修改。</p>
-<p>而对于异常根本的解决方法就是修改代码，解决这个异常。</p>
+<h3 id="八、总结"><a href="#八、总结" class="headerlink" title="八、总结"></a>八、总结</h3><p>这里学的异常处理并不是解决异常的根本方法，而是将可能出现的异常以一种”友好”的方式展现出来。比如用户点击了一个按钮，此时代码出现了异常，如果不针对这个异常进行处理的话可能展示出来的就是一段乱码或程序直接闪退；而进行异常处理就可用对话框的形式向用户发出错误提示信息，也可以将这个错误信息发送到后台，供开发人员进行修改。<br>而对于异常根本的解决方法就是修改代码，解决这个异常。</p>
 
     </div>
 
@@ -327,7 +330,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://daofenglee.cn/2020/09/24/%E5%BC%82%E5%B8%B8/" title="异常">http://daofenglee.cn/2020/09/24/异常/</a>
+    <a href="http://daofenglee.cn/2020/09/24/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" title="Java异常处理机制">http://daofenglee.cn/2020/09/24/Java异常处理机制/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -337,6 +340,9 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
 
         
 
@@ -344,8 +350,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/09/18/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" rel="prev" title="异常处理机制">
-      <i class="fa fa-chevron-left"></i> 异常处理机制
+    <a href="/2020/09/17/DFS%E7%AE%97%E6%B3%95/" rel="prev" title="DFS算法的学习">
+      <i class="fa fa-chevron-left"></i> DFS算法的学习
     </a></div>
       <div class="post-nav-item"></div>
     </div>
@@ -406,7 +412,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#异常处理机制"><span class="nav-number">1.</span> <span class="nav-text">异常处理机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、异常的概述"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、异常的概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Exception异常分类"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、Exception异常分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、异常的体系结构及常见异常"><span class="nav-number">1.0.3.</span> <span class="nav-text">三、异常的体系结构及常见异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、异常处理机制"><span class="nav-number">1.0.4.</span> <span class="nav-text">四、异常处理机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、异常方法重写"><span class="nav-number">1.0.5.</span> <span class="nav-text">五、异常方法重写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、手动抛出异常：throw"><span class="nav-number">1.0.6.</span> <span class="nav-text">六、手动抛出异常：throw</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、自定义异常类"><span class="nav-number">1.0.7.</span> <span class="nav-text">七、自定义异常类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、总结"><span class="nav-number">1.0.8.</span> <span class="nav-text">八、总结</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java异常处理机制"><span class="nav-number">1.</span> <span class="nav-text">Java异常处理机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、异常的概述"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、异常的概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Exception异常分类"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、Exception异常分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、异常的体系结构及常见异常"><span class="nav-number">1.0.3.</span> <span class="nav-text">三、异常的体系结构及常见异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、异常处理机制"><span class="nav-number">1.0.4.</span> <span class="nav-text">四、异常处理机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、异常方法重写"><span class="nav-number">1.0.5.</span> <span class="nav-text">五、异常方法重写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、手动抛出异常：throw"><span class="nav-number">1.0.6.</span> <span class="nav-text">六、手动抛出异常：throw</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、自定义异常类"><span class="nav-number">1.0.7.</span> <span class="nav-text">七、自定义异常类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、总结"><span class="nav-number">1.0.8.</span> <span class="nav-text">八、总结</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -422,20 +428,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -482,12 +488,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">12k</span>
+    <span title="站点总字数">8k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">10 分钟</span>
+    <span title="站点阅读时长">7 分钟</span>
 </div>
 
         
