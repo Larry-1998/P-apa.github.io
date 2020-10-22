@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"daofenglee.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="分治法一、算法基本思想对于一个规模较大的问题，可以将大问题分解为多个规模较小的子问题，这些子问题相互独立且与原问题形式相同，递归地求解这些子问题，然后将各子问题的解合并得到原问题的解。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://daofenglee.cn/2020/07/23/hello-world/index.html">
+<meta property="og:title" content="算法设计与分析----分治法">
+<meta property="og:url" content="http://daofenglee.cn/2020/10/22/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90--%E5%88%86%E6%B2%BB%E6%B3%95/index.html">
 <meta property="og:site_name" content="宗沅のBLOG">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="分治法一、算法基本思想对于一个规模较大的问题，可以将大问题分解为多个规模较小的子问题，这些子问题相互独立且与原问题形式相同，递归地求解这些子问题，然后将各子问题的解合并得到原问题的解。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-07-23T09:51:57.809Z">
-<meta property="article:modified_time" content="2020-08-01T14:40:05.701Z">
+<meta property="article:published_time" content="2020-10-22T01:23:38.582Z">
+<meta property="article:modified_time" content="2020-10-22T01:25:39.267Z">
 <meta property="article:author" content="宗沅">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="分治法">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://daofenglee.cn/2020/07/23/hello-world/">
+<link rel="canonical" href="http://daofenglee.cn/2020/10/22/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90--%E5%88%86%E6%B2%BB%E6%B3%95/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>Hello World | 宗沅のBLOG</title>
+  <title>算法设计与分析----分治法 | 宗沅のBLOG</title>
   
 
 
@@ -175,7 +175,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://daofenglee.cn/2020/07/23/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://daofenglee.cn/2020/10/22/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90--%E5%88%86%E6%B2%BB%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/P-apa/imageRepo@1.0/config_img/avatar.png">
@@ -188,7 +188,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          算法设计与分析----分治法
         </h1>
 
         <div class="post-meta">
@@ -197,23 +197,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-07-23 17:51:57" itemprop="dateCreated datePublished" datetime="2020-07-23T17:51:57+08:00">2020-07-23</time>
+              <time title="创建时间：2020-10-22 09:23:38 / 修改时间：09:25:39" itemprop="dateCreated datePublished" datetime="2020-10-22T09:23:38+08:00">2020-10-22</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 22:40:05" itemprop="dateModified" datetime="2020-08-01T22:40:05+08:00">2020-08-01</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AE%9E%E9%AA%8C/" itemprop="url" rel="index"><span itemprop="name">实验</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
             </span>
 
@@ -223,7 +217,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>357</span>
+              <span>901</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -242,22 +236,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+        <h1 id="分治法"><a href="#分治法" class="headerlink" title="分治法"></a>分治法</h1><h3 id="一、算法基本思想"><a href="#一、算法基本思想" class="headerlink" title="一、算法基本思想"></a>一、算法基本思想</h3><p>对于一个规模较大的问题，可以将大问题分解为多个规模较小的子问题，这些子问题相互独立且与原问题形式相同，递归地求解这些子问题，然后将各子问题的解合并得到原问题的解。</p>
 <a id="more"></a>
+<p><strong>特征：</strong></p>
+<ol>
+<li>问题的规模缩小到一定的程度就可以容易地解决；</li>
+<li>原问题可以分解为多个规模较小的相似问题；</li>
+<li>原问题的解可以通过子问题的解合并得到；</li>
+<li>子问题间相互独立，即不包含公共子问题。</li>
+</ol>
+<h3 id="二、求解排序问题"><a href="#二、求解排序问题" class="headerlink" title="二、求解排序问题"></a>二、求解排序问题</h3><h4 id="一-、快速排序-QuickSort"><a href="#一-、快速排序-QuickSort" class="headerlink" title="(一)、快速排序(QuickSort)"></a>(一)、快速排序(QuickSort)</h4><h5 id="1、算法分析"><a href="#1、算法分析" class="headerlink" title="1、算法分析"></a>1、算法分析</h5><p>对于快速排序，采取的步骤是：</p>
+<ol>
+<li>从待排序的数组中任意的选择一个元素（一般选择数组的第一个元素）为基准，然后将它放到最终的位置上，假设下标为i，即大于它的数在它右侧，小于它的数在它左侧；</li>
+<li>将待排序数组以基准元素为中点，划分为左、右两个子序列（不包括基准元素）；</li>
+<li>对两个子序列分别重复步骤1、2，直到序列的长度为1（即有序）。</li>
+</ol>
+<h5 id="2、代码实现"><a href="#2、代码实现" class="headerlink" title="2、代码实现"></a>2、代码实现</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">QuickSort算法</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosttream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//找到数组array[from.....to]中基准元素的最终位置</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Partition</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[],<span class="keyword">int</span> from,<span class="keyword">int</span> to)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=from,j=to;</span><br><span class="line">    <span class="keyword">int</span> tmp=<span class="built_in">array</span>[from];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(i!=j)&#123;</span><br><span class="line">        <span class="keyword">while</span>(j&gt;i $$ <span class="built_in">array</span>[j]&gt;=tmp)</span><br><span class="line">            j--;</span><br><span class="line">        <span class="built_in">array</span>[i]=<span class="built_in">array</span>[j];</span><br><span class="line">        <span class="keyword">while</span>(i&lt;j $$ <span class="built_in">array</span>[i]&lt;=tmp)</span><br><span class="line">            i++;</span><br><span class="line">        <span class="built_in">array</span>[j]=<span class="built_in">array</span>[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">array</span>[i]=tmp;</span><br><span class="line">    <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//进行划分排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickSort</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[],<span class="keyword">int</span> from,<span class="keyword">int</span> to)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=Partition(<span class="built_in">array</span>,from,to);</span><br><span class="line">    QuickSort(<span class="built_in">array</span>,from,i<span class="number">-1</span>);</span><br><span class="line">    QuickSort(<span class="built_in">array</span>,i+<span class="number">1</span>,to);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+<h3 id="三、求解查找问题"><a href="#三、求解查找问题" class="headerlink" title="三、求解查找问题"></a>三、求解查找问题</h3><h3 id="四、求解组合问题"><a href="#四、求解组合问题" class="headerlink" title="四、求解组合问题"></a>四、求解组合问题</h3>
     </div>
 
     
@@ -292,7 +290,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://daofenglee.cn/2020/07/23/hello-world/" title="Hello World">http://daofenglee.cn/2020/07/23/hello-world/</a>
+    <a href="http://daofenglee.cn/2020/10/22/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90--%E5%88%86%E6%B2%BB%E6%B3%95/" title="算法设计与分析----分治法">http://daofenglee.cn/2020/10/22/算法设计与分析--分治法/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -303,7 +301,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/%E5%88%86%E6%B2%BB%E6%B3%95/" rel="tag"># 分治法</a>
           </div>
 
         
@@ -311,11 +309,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/09/17/DFS%E7%AE%97%E6%B3%95/" rel="next" title="DFS算法的学习">
-      DFS算法的学习 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/10/22/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="prev" title="Java多线程">
+      <i class="fa fa-chevron-left"></i> Java多线程
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -374,7 +372,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分治法"><span class="nav-number">1.</span> <span class="nav-text">分治法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、算法基本思想"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、算法基本思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、求解排序问题"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、求解排序问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一-、快速排序-QuickSort"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">(一)、快速排序(QuickSort)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、算法分析"><span class="nav-number">1.0.2.1.1.</span> <span class="nav-text">1、算法分析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、代码实现"><span class="nav-number">1.0.2.1.2.</span> <span class="nav-text">2、代码实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、求解查找问题"><span class="nav-number">1.0.3.</span> <span class="nav-text">三、求解查找问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、求解组合问题"><span class="nav-number">1.0.4.</span> <span class="nav-text">四、求解组合问题</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
